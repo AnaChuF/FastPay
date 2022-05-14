@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  
+  height: 500px;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.form-register {
+  width:  95%;
+  max-width: 500px;
+  margin: auto;
+  background: #24303c;
+  border-radius: 7px;
+}
+
+.form-titulo{
+  background: #24303c;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: 100;
+  font-size: 30px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-bottom: 5px solid white;
+}
+
+.contenedor-inputs{
+  padding: 10px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: #24303c;
+}
+
+input, select{
+  margin-bottom: 15px;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+label{
+  color: white;
+}
+
+.input-48{
+  width: 48%;
+}
+
+.input-100{
+  width: 100%;
+}
+
+.form-register p {
+  font-size: 16px;
+  color: white;
+}
+
+.form-register a {
+  color: white;
+  text-decoration: none;
+}
+
+.form-register a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.botons{
+  background: #1f53c5;
+  color: white;
+  margin: auto;
+  padding: 10px 40px;
+  cursor: pointer;
+  font-size: 18px;
+  border: 0px;
+}
+
+.botons:active{
+  transform: scale(1.05);
+}
+
+.botons:hover{
+  background: green;
+}
+
+.form__link{
+  width: 100%;
+  margin: 7px;
+  text-align: center;
+  font-size: 14px;
+}

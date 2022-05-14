@@ -1,0 +1,105 @@
+/* ===============REGISTRO=============== */
+
+.form-registro {
+  margin-right: 100px;
+  max-width: 500px;
+  background: #3d7ba8;
+}
+
+.botons{
+  background: #2360e4;
+  color: white;
+  margin: auto;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  border: 0px;
+}
+
+.botons:active{
+  transform: scale(1.05);
+}
+
+.botons:hover{
+  background: #017a01;
+}
+
+.tittle{
+  color: black;
+  padding: 20px;
+  text-align: center;
+  font-weight: 100;
+  font-size: 30px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-bottom: 5px solid white;
+}
+
+.container{
+  display: flex;
+  margin-top: 40px;
+}
+
+.mt-3{
+  font-weight: bold;
+  color: #000;
+}
+
+.container-inputs{
+  padding: 5px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+input{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* ===============TABLA DE PROVEEDORES=============== */
+
+
+
+  
+table{
+  border-collapse: collapse;
+  font-size: 12pt;
+  font-family: 'arial';
+  width: 105%;
+}
+
+table th{
+  text-align: left;
+  padding: 8px;
+  background: #3d7ba8;
+  color: #FFF;
+}
+
+table tr{
+  background:  #fff;
+
+}
+
+table td{
+  padding: 5px;
+}
+
+.link_edit{
+  color: #0ca4ce;
+  font-weight: bold;
+}
+
+.link_delete{
+  color: #f26b6e;
+}
+

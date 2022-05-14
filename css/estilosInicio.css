@@ -1,0 +1,74 @@
+.navbar{
+    background-color: #006766;
+}
+
+.barraNav{
+    margin-left: 30px;
+}
+
+.btnCuenta{
+    background-color: #be9005;
+    border: none;
+    text-decoration: none;
+}
+
+body{
+    background-color: #395723;
+}
+
+.contenedor{
+    height: 91vh;
+    width: 90%;
+    background: #afd1a0 ;
+    display: flex;
+}
+
+.textoContenedor{
+    width: 50%;
+    height: 100%;
+    
+}
+
+.contenedorIzquierdo{
+    margin-top: 20%;
+    margin-left: 5%;
+}
+
+.contenedorIzquierdo h3,.conteiner{
+    margin-top: 40px;
+    
+}
+
+.contenedorIzquierdo h3{
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+}
+
+.contenedorIzquierdo .conteiner{
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.contenedorImagen{
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(320deg, #395723 250px, #afd1a0 0);   
+}
+
+.contenedorImagen img{
+    width: 90%;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+
+.btnCuenta a{
+    text-decoration: none;
+    color: white;
+}
+
+.btnCuenta :hover{
+    color: black;
+}

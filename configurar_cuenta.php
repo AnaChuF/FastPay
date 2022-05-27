@@ -1,9 +1,11 @@
-<?php   
+<?php
+    
     session_start();
 
     if(!$_SESSION['user']){
         header('location: index.php');
     }
+
 
 ?>
 
@@ -19,53 +21,52 @@
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configuracion de Cuenta</title>
 </head>
 <body>
-    
     <?php
         require_once('Layouts/nav.php');
     ?>
         <div class= "container">
             <p>                 
-            <h4>Configuracion de Cuenta</h4>
-            <form>
+            <h4 class="mb-4">Configuracion de Cuenta</h4>    
+            <form action="usuario/actualizarDatos.php" method="POST">          
                 <div class="row mb-3">
                     <label for="inputName3" class="col-sm-2 col-form-label">Nombres</label>
                     <div class="col-sm-10">
-                        <input type="name" class="form-control" id="inputName3">
+                        <input type="text" name="id" value="<?php echo $user->id_usu; ?>" hidden>
+                        <input type="text" class="form-control" name="nombres" value="<?php echo $user->nom_usu; ?>" >
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="inputUserName3" class="col-sm-2 col-form-label">Nombre de Usuario</label>
                     <div class="col-sm-10">
-                        <input type="username" class="form-control" id="inputUserName3">
+                        <input type="text" class="form-control" name="nombreUsuario" value="<?php echo $user->nomu_usu; ?>" >
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="inputPhone3" class="col-sm-2 col-form-label">Telefono</label>
                     <div class="col-sm-10">
-                        <input type="phone" class="form-control" id="inputPhone3">
+                        <input type="text" class="form-control" name="telefono" value="<?php echo $user->tel_usu; ?>">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3">
+                        <input type="email" class="form-control" name="email" value="<?php echo $user->corr_usu; ?>">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3">
+                        <input type="password" class="form-control" name="clave" value="<?php echo $user->con_usu; ?>">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Actualizar</button>
+                <button type="submit" class="btn btn-primary">Actualizar Datos </button>
             </form>
             </p> 
-        </div>
-    
+        </div>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

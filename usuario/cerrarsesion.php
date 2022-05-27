@@ -6,6 +6,4 @@
     header('location: ../index.php');
 
 
-
-
 ?>

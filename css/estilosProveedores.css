@@ -9,9 +9,10 @@
 .botons{
   background: #2360e4;
   color: white;
-  margin: auto;
+  margin: 12px 8px 12px 30px;
   padding: 10px 20px;
   cursor: pointer;
+  width: 85%;
   font-size: 18px;
   border: 0px;
 }
@@ -25,14 +26,14 @@
 }
 
 .tittle{
-  color: black;
-  padding: 20px;
-  text-align: center;
-  font-weight: 100;
+  color: white;
+  padding: 10px;
   font-size: 30px;
+  font-weight: bold;
+  text-align: center;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
-  border-bottom: 5px solid white;
+  border-bottom: 3px solid white;
 }
 
 .container{
@@ -45,20 +46,20 @@
   color: #000;
 }
 
-.container-inputs{
-  padding: 5px 30px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+label{
+  font-size: 16px;
+  color: white;
+  margin-left: 6%;
 }
 
-input{
+input, select{
   margin-top: 10px;
-  margin-bottom: 10px;
   padding: 15px;
   font-size: 16px;
   border-radius: 3px;
   border: 1px solid black;
+  width: 85%;
+  margin-left: 6%;
 }
 
 a {
@@ -96,10 +97,8 @@ table td{
 
 .link_edit{
   color: #0ca4ce;
-  font-weight: bold;
 }
 
 .link_delete{
   color: #f26b6e;
 }
-

@@ -25,7 +25,10 @@
                 <li class="nav-item">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle mx-5" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <?php echo $_SESSION['user'];  ?>
+                            <?php 
+                                $user = json_decode($_SESSION["user"]); 
+                                echo $user->nomu_usu;                      
+                            ?>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="configurar_cuenta.php">Configurar Cuenta</a></li>

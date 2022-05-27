@@ -10,12 +10,11 @@
 
     $sql="SELECT * FROM usuario WHERE corr_usu='$email' AND con_usu='$clave'";
     $result=mysqli_query($conexion,$sql);
+    $data=mysqli_fetch_assoc($result);
 
     if(mysqli_num_rows($result)>0){
-        foreach($result as $res){
-            $_SESSION['user']= $res['nomu_usu'];
-            header('location: ../inicio.php');
-        }
+        $_SESSION['user']= json_encode($data);
+        header('location: ../inicio.php');
     }else{
         echo 'No existe';
     }

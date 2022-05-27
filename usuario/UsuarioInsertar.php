@@ -1,7 +1,7 @@
 <?php
 
     include "../Conexion.php";
-    
+
     $nombres = $_POST["nombres"];
     $apellidos = $_POST["apellidos"];
     $correo = $_POST["correo"];
@@ -11,20 +11,10 @@
     $clave = $_POST["clave"];
     $clave2 = $_POST["clave2"];
 
-    if ($clave == $clave2){
-    
-        $sql = "INSERT INTO usuario(nom_usu, ape_usu, corr_usu, con_usu, nomu_usu, dni_usu, tel_usu) VALUES ('$nombres', '$apellidos', '$correo','$clave','$usuario','$dni','$phone')";
-
-    if (mysqli_query($conexion, $sql)) {
-        echo "Usuario registrado con exito";
-    } else {
-        echo "Error de conexion: " . $sql . "<br>" . mysqli_error($conexion);
+    $sql = "INSERT INTO usuario(nom_usu, ape_usu, corr_usu, con_usu, nomu_usu, dni_usu, tel_usu) VALUES ('$nombres', '$apellidos', '$correo','$clave','$usuario','$dni','$phone')";
+    $result=mysqli_query($conexion, $sql);
+    if ($result) {
+        echo $result;
     }
-    mysqli_close($conexion);
-
-    }else{
-        echo "no coinciden las contraseñas";
-    }
-
     
 ?>

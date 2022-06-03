@@ -6,7 +6,7 @@ include "../Conexion.php";
 
 $id=$_POST['id'];
 $names=$_POST['nombres'];
-$nameUser=$_POST['nombreUsuario'];
+$nameUser=$_POST['usuario'];
 $telefono=$_POST['telefono'];
 $email=$_POST['email'];
 $pass=$_POST['clave'];
@@ -25,16 +25,9 @@ if (mysqli_query($conexion,$sql)) {
         "con_usu"=>$pass
     ];
 
-    /*$consulta="SELECT * FROM usuario WHERE id_usu='$id'";
-    $resultado=mysqli_query($conexion,$consulta);
-    $data=mysqli_fetch_assoc($resultado);*/
-
     $_SESSION['user']=json_encode($data);
     echo $_SESSION['user'];
-    header('location: ../configurar_cuenta.php');
-
-} else {
-    echo "error";
+    //header('location: ../configurar_cuenta.php');
 
 }
 

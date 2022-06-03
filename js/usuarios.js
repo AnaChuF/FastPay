@@ -67,3 +67,36 @@ function registrarUsuarios(){
 
     })
 }*/
+
+function actualizarDatos(){
+    let id=document.getElementById('id').value;
+    let nombres=document.getElementById('nombres').value;
+    let usuario=document.getElementById('nombreUsuario').value;
+    let telefono=document.getElementById('telefono').value;
+    let email=document.getElementById('email').value;
+    let pass=document.getElementById('clave').value;
+
+    $.ajax({
+        url:'usuario/actualizarDatos.php',
+        type:'post',
+        data:{
+            id:id,
+            nombres,
+            usuario:usuario,
+            telefono:telefono,
+            email:email,
+            clave:pass
+        },
+        success:function(res){
+            console.log(res);
+            if(res){
+                Swal.fire({
+                    icon:'success',
+                    title:'Éxito',
+                    text:'Datos Actualizados'
+                })
+            }
+        }
+    })
+
+}

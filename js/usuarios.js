@@ -100,3 +100,28 @@ function actualizarDatos(){
     })
 
 }
+
+
+/*function inicioSesion(){
+    let email=document.getElementById('txt_usuario').value;
+    let clave=document.getElementById('txt_clave').value;
+    console.log(email);
+    console.log(clave);
+
+    $.ajax({
+        url:'usuario/iniciosesion.php',
+        type:'post',
+        data:{
+            email:email,
+            clave:clave
+        },
+        success:function(res){
+            console.log(res);
+            try {
+                location.href='inicio.php';
+            } catch (error) {
+                console.log(error.message);
+            }
+        }
+    })
+}*/

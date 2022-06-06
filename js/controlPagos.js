@@ -87,6 +87,7 @@ function registrarPagos() {
                     title: 'Éxito',
                     text: 'Registro de Pago registrado'
                 });
+                mostrarPagos();
             }
         }
     });

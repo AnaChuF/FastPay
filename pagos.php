@@ -25,7 +25,7 @@ require 'Conexion.php';
     require_once('Layouts/nav.php');
 ?>
 <div class="container">
-    <div class="mt-4">
+    <div class="mt-5">
         <div class="row">
             <div class="col-8">
                 <h3>Control de Pagos <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#ModalPago">
@@ -40,7 +40,7 @@ require 'Conexion.php';
                 </form>
             </div>
         </div>
-        <table class="table mt-3" id="tablaRegistros">
+        <table class="table mt-4" id="tablaRegistros">
             <thead>
                 <tr>
                     <th scope="col">CATEGORIA</th>

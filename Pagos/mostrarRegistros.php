@@ -3,7 +3,6 @@
     require "../Conexion.php";
 
 
-
     $sql="SELECT * FROM pagos p 
         INNER JOIN tipo_pago t ON p.id_tipopago=t.id_tipopago 
         INNER JOIN comprobante_pago com ON p.id_comprobantepago=com.id_comprobantepago 
@@ -29,7 +28,7 @@
             
             echo $tabla;
         }
-            $table.='
+            $table='
                     <tr>
                         <th scope="col" colspan="5">Total</th>
                         <th scope="col">'.$total.'</th>

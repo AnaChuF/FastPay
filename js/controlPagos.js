@@ -8,6 +8,11 @@ $(document).ready(function(){
     
 })
 
+$('#buscar').keyup(function(){
+    limpiar();
+})
+
+
 function mostrarPagos(){
     $.ajax({
         url:'Pagos/mostrarRegistros.php',
@@ -146,3 +151,11 @@ function mostrarAlertas(id){
         }
     })
 }
+
+function limpiar(){
+    let buscar=document.getElementById('buscar').value;
+    if(buscar==''){
+        mostrarPagos();
+    }
+}
+

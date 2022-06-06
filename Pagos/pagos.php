@@ -39,22 +39,39 @@
             INNER JOIN categoria c on prov.id_cate=c.id_cate WHERE c.nom_cate='$categoria'";
 
         if($result=mysqli_query($conexion,$sql)){
-            while ($row=mysqli_fetch_assoc($result)) {
+            if(mysqli_num_rows($result)>0){
+                $total=0;
+                while ($row=mysqli_fetch_assoc($result)) {
+                    
+                    $tabla='
+                            <tr>
+                                <td>'.$row['nom_cate'].'</td>
+                                <td>'.$row['nom_prov'].'</td>
+                                <td>'.$row['igv_pago'].'</td>
+                                <td>'.$row['importe_pago'].'</td>
+                                <td>'.$row['inicio_sus'].'</td>
+                                <td>'.$row['subtotal_pago'].'</td>
+                                <td>
+                                    <button type="button" onclick="mostrarAlertas('.$row['id_pagos'].')"><i class="fa-solid fa-circle-info"></i></button>
+                                </td>
+                            </tr>';
+                    $total=$total+$row['subtotal_pago'];       
+                    echo $tabla;
+                }
+                $table='
+                        <tr>
+                            <th scope="col" colspan="5">Total</th>
+                            <th scope="col">'.$total.'</th>
+                        </tr>';
+                echo $table;
+            }else{
                 $tabla='
                         <tr>
-                            <td>'.$row['nom_cate'].'</td>
-                            <td>'.$row['nom_prov'].'</td>
-                            <td>'.$row['igv_pago'].'</td>
-                            <td>'.$row['importe_pago'].'</td>
-                            <td>'.$row['tipo_de_pago'].'</td>
-                            <td>'.$row['tipo_comprobantepago'].'</td>
-                            <td>'.$row['subtotal_pago'].'</td>
-                            <td>
-                                <button type="button" onclick="mostrarAlertas('.$row['id_pagos'].')"><i class="fa-solid fa-circle-info"></i></button>
-                            </td>
+                            <td colspan="7">NO HAY REGISTROS</td>
                         </tr>';
                 echo $tabla;
             }
+            
         }
     }elseif (isset($_POST['mostrar']) && $_POST['mostrar']=='datos') {
         $id=$_POST['id'];
@@ -66,7 +83,7 @@
             INNER JOIN registrosus r on r.id_regSus=p.id_regSus 
             INNER JOIN proveedores prov on prov.id_prov=r.id_prov 
             INNER JOIN categoria c on prov.id_cate=c.id_cate WHERE p.id_pagos='$id'";
-            
+
         if($result=mysqli_query($conexion,$sql)){
             while($row=mysqli_fetch_assoc($result)){
                 echo json_encode($row);

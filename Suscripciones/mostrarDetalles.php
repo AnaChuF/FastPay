@@ -19,6 +19,7 @@
         // $usuario= $nombre.' '.$ape;
         $tabla='
                 <tr>
+                    <td>'.$row['id_regSus'].'</td>
                     <td>'.$row['nom_prov'].'</td>
                     <td>'.$row['nom_cate'].'</td>
                     <td>'.$row['inicio_sus'].'</td>

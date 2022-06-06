@@ -47,8 +47,7 @@ require 'Conexion.php';
                     <th scope="col">SERVICIO SUSCRITO</th>
                     <th scope="col">IGV</th>
                     <th scope="col">IMPORTE</th>
-                    <th scope="col">TIPO PAGO</th>
-                    <th scope="col">COMPROBANTE</th>
+                    <th scope="col">INICIO DE SUSCRIPCION</th>
                     <th scope="col">SUBTOTAL</th>
                     <th scope="col">Detalle de pago</th>
                 </tr>
@@ -75,7 +74,7 @@ require 'Conexion.php';
             <div class="modal-body">
                 <form id="dataSus">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="idRegistro" placeholder="ID" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <input type="text" class="form-control" id="idRegistro" placeholder="Ingresar su ID de Registro se Suscripcion" aria-label="Recipient's username" aria-describedby="button-addon2">
                         <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="buscarRegistro()"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                     <fieldset disabled>
@@ -178,15 +177,15 @@ require 'Conexion.php';
             <h4 class="alert alert-primary" role="alert">DETALLE DE PAGO</h4>
                 <div class="mb-3">
                     <h6>ESTADO DE PAGO</h6>
-                    <input type="text" id="estadoP" class="form-control" placeholder="Disabled input">
+                    <input type="text" id="estadoP" class="form-control">
                 </div>
                 <div class="mb-3">
                     <h6>MÉTODO DE PAGO</h6>
-                    <input type="text" id="metodoP" class="form-control" placeholder="Disabled input">
+                    <input type="text" id="metodoP" class="form-control">
                 </div>
                 <div class="mb-3">
                     <h6>COMPROBANTE:</h6>
-                    <input type="text" id="comprobanteP" class="form-control" placeholder="Disabled input">
+                    <input type="text" id="comprobanteP" class="form-control">
                 </div>
             </fieldset>
         </div>

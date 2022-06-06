@@ -14,6 +14,7 @@ function mostrarPagos(){
         type:'post',
         success:function(res){
             if(res){
+
                 try {
                     $('#tablaRegistros').find('tbody').html(res);
                 } catch (error) {

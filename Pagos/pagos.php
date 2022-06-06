@@ -66,6 +66,7 @@
             INNER JOIN registrosus r on r.id_regSus=p.id_regSus 
             INNER JOIN proveedores prov on prov.id_prov=r.id_prov 
             INNER JOIN categoria c on prov.id_cate=c.id_cate WHERE p.id_pagos='$id'";
+            
         if($result=mysqli_query($conexion,$sql)){
             while($row=mysqli_fetch_assoc($result)){
                 echo json_encode($row);

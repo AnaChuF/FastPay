@@ -3,6 +3,7 @@
     require "../Conexion.php";
 
 
+
     $sql="SELECT * FROM pagos p 
         INNER JOIN tipo_pago t ON p.id_tipopago=t.id_tipopago 
         INNER JOIN comprobante_pago com ON p.id_comprobantepago=com.id_comprobantepago 
@@ -20,8 +21,7 @@
                         <td>'.$row['nom_prov'].'</td>
                         <td>'.$row['igv_pago'].'</td>
                         <td>'.$row['importe_pago'].'</td>
-                        <td>'.$row['tipo_de_pago'].'</td>
-                        <td>'.$row['tipo_comprobantepago'].'</td>
+                        <td>'.$row['inicio_sus'].'</td>
                         <td>'.$row['subtotal_pago'].'</td>
                         <td><button type="button" class="btn btn-outline-secondary" onclick="mostrarAlertas('.$row['id_pagos'].')"><i class="fa-solid fa-circle-info"></i></button></td>
                     </tr>';
@@ -31,7 +31,7 @@
         }
             $table.='
                     <tr>
-                        <th scope="col" colspan="6">Total</th>
+                        <th scope="col" colspan="5">Total</th>
                         <th scope="col">'.$total.'</th>
                     </tr>';
         echo $table;

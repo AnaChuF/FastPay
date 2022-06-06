@@ -1,24 +1,25 @@
 $(document).ready(function(){
-    //mostrarPagos();
-
+    mostrarPagos();
+    $('#divPago').hide();
+    $('#divDetalles').hide();
+    $('#alertSuccess').hide();
+    $('#alertWarning').hide();
+    $('#alertDanger').hide();
     
 })
 
 function mostrarPagos(){
     $.ajax({
-        url:'Pagos/ControlPagos.php',
+        url:'Pagos/mostrarRegistros.php',
         type:'post',
         success:function(res){
-            // console.log(res);
-            // if(res){
-
-            //     try {
-            //         $('#tablaProveedores').find('tbody').html(res);
-
-            //     } catch (error) {
-            //         console.log('Error: ', error.message);
-            //     }
-            // }
+            if(res){
+                try {
+                    $('#tablaRegistros').find('tbody').html(res);
+                } catch (error) {
+                    console.log('Error: ', error.message);
+                }
+            }
         }
     })
 }
@@ -49,7 +50,6 @@ function buscarRegistro(){
     })
 }
 
-
 // INSERTAR Datos
 function registrarPagos() {
     let id =document.getElementById('idRegistro').value;
@@ -75,7 +75,73 @@ function registrarPagos() {
         },
         success:function(r){
             console.log(r);
-            
+            if(r==1){
+                Swal.fire({
+                    icon:'success',
+                    title: 'Éxito',
+                    text: 'Registro de Pago registrado'
+                });
+            }
         }
     });
+}
+
+function buscarCategoria(){
+    let categoria=document.getElementById('buscar').value;
+    $.ajax({
+        url:'Pagos/pagos.php',
+        type:'post',
+        data:{
+            categoria:categoria,
+            busqueda:'categoria'
+        },
+        success: function(res){
+            if(res){
+                try {
+                    $('#tablaRegistros').find('tbody').html(res);
+                } catch (error) {
+                    console.log('Error: ', error.message);
+                }
+            }
+        }
+    })
+}
+
+function mostrarAlertas(id){
+    $.ajax({
+        type:'post',
+        url:'Pagos/pagos.php',
+        data:{
+            id:id,
+            mostrar:'datos'
+        },
+        success:function(res){
+            if(res){
+                let data=JSON.parse(res);
+
+                $('#servicioSuscrito').val(data['nom_prov']);
+                $('#mostrarCategoria').val(data['nom_cate']);
+                $('#tipoP').val(data['tipo_de_pago']);
+
+                $('#metodoP').val(data['tipo_de_pago']);
+                $('#estadoP').val(data['estado_pago']);
+                $('#comprobanteP').val(data['tipo_comprobantepago']);
+
+                if(data['estado_pago']=='PAGO CANCELADO'){
+                    $('#divPago').show();
+                    $('#divDetalles').show();
+                    $('#alertSuccess').show();
+
+                    $('#alertDanger').hide();
+
+                }else if(data['estado_pago']=='PAGO ATRASADO'){
+                    $('#divPago').show();
+                    $('#divDetalles').show();
+                    $('#alertDanger').show();
+
+                    $('#alertSuccess').hide();
+                }
+            }
+        }
+    })
 }

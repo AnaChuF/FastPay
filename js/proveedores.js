@@ -29,7 +29,7 @@ function tipoProveedor(){
     }
 }
 
-function agregarCategoria(){
+function agregarCate(){
 
     let cat=document.getElementById('otcat').value;
     console.log(cat);
@@ -48,6 +48,8 @@ function agregarCategoria(){
                     title: 'Éxito',
                     text: 'Categoria Agregada'
                 });
+                mostrarCategoria();
+                modalCategoria.reset();
             }
         }
     })

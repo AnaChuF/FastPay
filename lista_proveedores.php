@@ -41,6 +41,7 @@
                         
                     </select>
                     <!--Botón modal agregar categorias-->
+                    
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarCategoria">Agregar Otras Categoria</button>
 
                     <select class="select-from" aria-label="Default select example" name="rol" id="rol" required>
@@ -88,7 +89,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" id="btnregistrar" value="cate" name="btnregistrar" onclick="agregarCategoria()" class="btn btn-primary">Registrar</button>
+                            <button type="button" id="btnregistrar" value="cate" name="btnregistrar" onclick="agregarCate()" class="btn btn-primary">Registrar</button>
                         </div>
                     </form>
                     </div>

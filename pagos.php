@@ -166,10 +166,10 @@ require 'Conexion.php';
                     <h6>CATEGORIA</h6>
                     <input type="text" id="mostrarCategoria" class="form-control" placeholder="Disabled input">
                 </div>
-                <div class="mb-3">
+                <!--<div class="mb-3">
                     <h6>A NOMBRE DE</h6>
-                    <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input" value="<?php $nombres=$user->nom_usu." ".$user->ape_usu; echo $nombres; ?>">
-                </div>
+                    <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input" value="<?= $user->nom_usu; ?>">
+                </div>-->
             </fieldset>
         </div>
         <div class="col-4" id="divDetalles" >

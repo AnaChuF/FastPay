@@ -40,7 +40,7 @@
                     <p>
                         <h3>REGISTRO DE SUSCRIPCION</h3>
                     </p>
-                    <fieldset disabled>
+                    <fieldset disabled hidden>
                         <div class="mb-3">
                             <p>
                             <input id="id" value="<?php echo $user->id_usu?>" hidden>
@@ -175,7 +175,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>
-                                    <th scope="col">PROVEEDOR</th>
+
                                     <th scope="col">CATEGORIA</th>
                                     <th scope="col">INICIO DE SUSCRIPCION</th>
                                     <th scope="col">CICLO</th>
